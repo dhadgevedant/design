@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles/mainStyle.css">
+
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+    <div id="landing" class=" h-screen w-screen flex flex-col justify-center items-center" style="background-image: url(styles/landing/1.jpg); background-size: cover;">
+        
+        <h1 class="text-6xl font-bold"><i>Formula 1</i></h1>
+        <button onclick="{
+            change()
+        }" class="border-2 p-2 m-2 rounded">next</button>
+
+    </div>
+
+    <div class="h-screen w-screen flex flex-col justify-center items-center">
+
+    </div>
+
+    
+</body>
+
+<script>
+    let i = 1;
+    let scrollProgress = 0;
+    let screenHeight = window.innerHeight;
+    let screenMagnification = window.devicePixelRatio;
+    
+    window.addEventListener('scroll', function() {
+        let b = scrollProgress;
+        scrollProgress = Math.round(window.scrollY/screenMagnification/10);
+        
+
+        if(b!=scrollProgress){
+            console.log(scrollProgress);
+        }
+    });
+
+    setInterval(()=>{
+        let bg = document.getElementById("landing");
+        bg.style.backgroundImage = `url(styles/landing/${(scrollProgress+1)%25}.jpg)`;
+        i=((i+1)%25)+1;
+        console.log(i);
+    } , 10)
+    function change(){
+        
+    }
+</script>
+
+</html>
