@@ -32,7 +32,7 @@
     <link rel="preload" href="styles/landing/25.jpg" as="image">
     <link rel="preload" href="styles/landing/24.jpg" as="image">
     <link rel="preload" href="styles/landing/23.jpg" as="image">
-        <script>
+    <script>
         window.addEventListener('load', function() {
             document.body.style.display = 'block';
         });
@@ -43,46 +43,55 @@
 </head>
 <body class="bg-black text-white overflow-x-hidden scroll-smooth">
 
-    <div id="landing" class=" h-[85vh] w-screen flex flex-col justify-center items-center" style="background-image: url(styles/landing/1.jpg); background-size: cover; background-position-x: right;">
+    <div id="landing" class=" h-[85vh] w-screen flex flex-col justify-center items-center"
+    style=" background-image: url(styles/landing/1.jpg); background-size: cover; background-position-x: right;">
         
         <h1 class="text-9xl font-bold tracking-tight"><i>Formula 1</i></h1>
 
         <div id="nav" class="w-3/12 hover:w-10/12   
-        rounded-xl bg-white h-12 absolute flex justify-center gap-6 cursor-pointer
-         items-center text-black" 
-            style="position: absolute; transition:width 0.2s ease-out;">
+        rounded-xl bg-transparent backdrop-blur-sm h-12 absolute flex justify-center gap-6 cursor-pointer
+         items-center text-white border border-white " 
+            style="position: absolute; transition:width 0.1s ease-out;">
 
             <h1 class="
-                hover:bg-black
-                hover:text-white
-                transition-colors 
+                hover:translate-y-[-15px]
+                hover:bg-white
+                hover:text-black
+                transition-all 
+                hover:scale-125
                 duration-150
                 rounded-sm
                 p-2
             ">Drivers</h1>
             
             <h1 class="
-                hover:bg-black
-                hover:text-white
-                transition-colors 
+            hover:bg-white
+            hover:text-black
+                transition-all 
+                hover:translate-y-[-15px]
+                hover:scale-125
                 duration-150
                 rounded-sm
                 p-2
             ">Teams</h1>
             
             <h1 class="
-                hover:bg-black
-                hover:text-white
-                transition-colors 
+            hover:bg-white
+            hover:text-black
+                transition-all 
+                hover:translate-y-[-15px] 
+                hover:scale-125
                 duration-150
                 rounded-sm
                 p-2
             ">Tracks</h1>
             
             <h1 class="
-                hover:bg-black
-                hover:text-white
-                transition-colors 
+            hover:bg-white
+            hover:text-black
+                transition-all 
+                hover:translate-y-[-15px]
+                hover:scale-125
                 duration-150
                 rounded-sm
                 p-2 
@@ -92,8 +101,16 @@
 
     </div>
 
-    <div class="h-screen w-screen flex flex-col justify-center items-center">
+    <div class="h-screen w-screen flex flex-col justify-center items-left p-10" 
+    style="background-image:linear-gradient(to bottom, black, transparent 50%),linear-gradient(to top, black, transparent 50%), url(styles/sec2.jpeg);
+     background-size: cover; ">
+        <h1 class="text-9xl font-bold tracking-tight"><i>Section 2</i></h1>
+    </div>
 
+    <div class="h-screen w-screen flex flex-col justify-end items-center p-10" 
+    style="background-image:linear-gradient(to bottom, black, transparent 50%),linear-gradient(to top, black, transparent 50%), url(styles/sec3.webp);
+     background-size: cover; ">
+        <h1 class="text-9xl font-bold tracking-tight mb-48"><i>Section 3</i></h1>
     </div>
 
     
@@ -115,7 +132,7 @@
         
         // if (prev!=scrollProgress)console.log(scrollProgress);
         let bg = document.getElementById("landing");
-        bg.style.backgroundImage = `url(styles/landing/${(scrollProgress%25)+1}.jpg)`;    
+        bg.style.backgroundImage = `linear-gradient(to bottom, transparent 50%, black),url(styles/landing/${(scrollProgress%25)+1}.jpg)`;    
 
         // prev = scrollProgress
 
