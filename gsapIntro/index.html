@@ -17,7 +17,7 @@
     
     </div>
 
-    <div class="h-screen w-screen flex justify-center items-center md:p-36 sm:p-24 p-10 flex-col" id="sec">
+    <div class="h-screen w-screen flex justify-center items-center md:p-36 sm:p-24 p-8 flex-col" id="sec">
         <h1 class="xl:text-9xl md:text-8xl sm:text-7xl text-5xl" id="sec2">
             Text Animations using <span class="text-green-500"><i>GSAP</i></span> Text-Split <br> Lets see how it Works
         </h1>
@@ -68,16 +68,17 @@
             //section 2        
             const arr = SplitType.create('#sec2');
             // console.log(arr.words);
-            gsap.from(arr.words, {
+            gsap.from(arr.chars, {
                 scrollTrigger:{
                     trigger:'#sec2',
                     toggleActions: "restart restart restart none",
                 },
-                duration: 1,
+                duration: 0.1,
                 opacity: 0,
                 y: -80,
                 ease: "elastic",
-                stagger: 0.1,
+                stagger: 0.02,
+                scale:-0.01,
             })
 
         });
